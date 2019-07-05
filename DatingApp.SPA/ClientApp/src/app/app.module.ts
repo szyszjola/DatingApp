@@ -12,6 +12,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { NavComponent } from './nav/nav.component';
 import { AuthService } from './_services/auth.service';
 import { RegisterComponent } from './register/register.component';
+import { ErrorInterceptorProvider } from './_services/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RegisterComponent } from './register/register.component';
       { path: 'fetch-data', component: FetchDataComponent },
     ])
   ],
-  providers: [AuthService],
+  providers: [AuthService,
+    ErrorInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
